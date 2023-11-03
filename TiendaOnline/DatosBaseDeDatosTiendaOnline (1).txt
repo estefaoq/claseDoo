@@ -1,0 +1,30 @@
+Datos de conexión:
+-Servidor de bases de datos: server-tienda-online-sandbox.database.windows.net
+-Puerto de conexión de bases de datos: 1433
+-Nombre de bases de datos: BD_TIENDA_ONLINE_SANDBOX
+-Usuario de bases de datos: usrTiendaOnline
+-Clave usuario de bases de datos: usrT13nd40nl1n3
+
+Sentencias DDL para creación de tablas de bases de datos en SQL Server:
+
+CREATE TABLE TipoIdentificacion (
+	id UNIQUEIDENTIFIER PRIMARY KEY,
+	codigo NVARCHAR(50) NOT NULL,
+	nombre NVARCHAR(100) NOT NULL,
+	estado BIT NOT NULL
+)
+
+CREATE TABLE Cliente (
+	id UNIQUEIDENTIFIER PRIMARY KEY,
+	tipoIdentificacion UNIQUEIDENTIFIER NOT NULL FOREIGN KEY REFERENCES TipoIdentificacion(id),
+	identificacion NVARCHAR(50) NOT NULL,
+	primerNombre NVARCHAR(50) NOT NULL,
+	segundoNombre NVARCHAR(50) NOT NULL,
+	primerApellido NVARCHAR(50) NOT NULL,
+	segundoApellido NVARCHAR(50) NOT NULL,
+	correoElectronico NVARCHAR(320) NOT NULL,
+	correoElectronicoConfirmado BIT NOT NULL,
+	numeroTelefonoMovil NVARCHAR(50) NOT NULL,
+	numeroTelefonoMovilConfirmado BIT NOT NULL,
+	fechaNacimiento DATE NOT NULL
+)
