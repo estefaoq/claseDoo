@@ -1,6 +1,6 @@
 package co.edu.uco.tiendaonline.service.facade;
 
-public interface Facade {
+public interface Facade <T>{
 	void excute ( T dto);
 
 }
