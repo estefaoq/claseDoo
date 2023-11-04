@@ -1,34 +1,30 @@
 package co.edu.uco.tiendaonline.data.entity.support;
 
-public final class CorreoElectronicoClienteEntity {
+import co.edu.uco.tiendaonline.service.domain.support.CorreoElectronicoClienteDomain;
 
-	private String correoElectronico;
-	private boolean correoElectronicoConfirmado;
+public class CorreoElectronicoClienteEntity {
 
-	private CorreoElectronicoClienteEntity(final String correoElectronico, final boolean correoElectronicoConfirmado) {
+	public String CorreoElectronico;
+	public boolean correoElectronicoConfirmado;
+	private CorreoElectronicoClienteEntity( final  String correoElectronico, final  boolean correoElectronicoConfirmado) {
 		setCorreoElectronico(correoElectronico);
 		setCorreoElectronicoConfirmado(correoElectronicoConfirmado);
 	}
-
-	public static final CorreoElectronicoClienteEntity crear(final String correoElectronico,
-			final boolean correoElectronicoConfirmado) {
-		return new CorreoElectronicoClienteEntity(correoElectronico, correoElectronicoConfirmado);
-	}
-
 	private final void setCorreoElectronico(final String correoElectronico) {
-		this.correoElectronico = correoElectronico;
+		CorreoElectronico = correoElectronico;
 	}
-
-	private final void setCorreoElectronicoConfirmado(final boolean correoElectronicoConfirmado) {
+	private final void setCorreoElectronicoConfirmado( final boolean correoElectronicoConfirmado) {
 		this.correoElectronicoConfirmado = correoElectronicoConfirmado;
 	}
-
 	public final String getCorreoElectronico() {
-		return correoElectronico;
+		return CorreoElectronico;
 	}
-
 	public final boolean isCorreoElectronicoConfirmado() {
 		return correoElectronicoConfirmado;
 	}
-
+	public static CorreoElectronicoClienteEntity crear(String correoElectronico,
+			boolean correoElectronicoConfirmado) {
+		return new CorreoElectronicoClienteEntity (correoElectronico,correoElectronicoConfirmado);
+	}
+	
 }

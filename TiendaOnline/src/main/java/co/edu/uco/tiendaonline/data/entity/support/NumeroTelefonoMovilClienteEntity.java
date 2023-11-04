@@ -1,34 +1,33 @@
 package co.edu.uco.tiendaonline.data.entity.support;
 
-public final class NumeroTelefonoMovilClienteEntity {
-	private String numeroTelefonoMovil;
-	private boolean numeroTelefonoMovilConfirmado;
+import co.edu.uco.TiendaOnline.data.entity.support.NumeroTelefonoMovilClienteEntity;
 
-	private NumeroTelefonoMovilClienteEntity(final String numeroTelefonoMovil,
-			final boolean numeroTelefonoMovilConfirmado) {
+public class NumeroTelefonoMovilClienteEntity{
+	public String numeroTelefonoMovil;
+	public boolean numeroTelefonoConfirmado;
+	private NumeroTelefonoMovilClienteEntity(final String numeroTelefonoMovil, final boolean numeroTelefonoConfirmado) {
+		super();
 		setNumeroTelefonoMovil(numeroTelefonoMovil);
-		setNumeroTelefonoMovilConfirmado(numeroTelefonoMovilConfirmado);
+		setNumeroTelefonoConfirmado(numeroTelefonoConfirmado);
 	}
-
-	public static final NumeroTelefonoMovilClienteEntity crear(final String numeroTelefonoMovil,
-			final boolean numeroTelefonoMovilConfirmado) {
-		return new NumeroTelefonoMovilClienteEntity(numeroTelefonoMovil, numeroTelefonoMovilConfirmado);
+	public static NumeroTelefonoMovilClienteEntity crear(String numeroTelefonoMovil,
+			boolean numeroTelefonoConfirmado) {
+		
+		return new NumeroTelefonoMovilClienteEntity(numeroTelefonoMovil, numeroTelefonoConfirmado);
 	}
-
-	public final String getNumeroTelefonoMovil() {
-		return numeroTelefonoMovil;
-	}
-
 	private final void setNumeroTelefonoMovil(final String numeroTelefonoMovil) {
 		this.numeroTelefonoMovil = numeroTelefonoMovil;
 	}
-
-	public final boolean isNumeroTelefonoMovilConfirmado() {
-		return numeroTelefonoMovilConfirmado;
+	private final void setNumeroTelefonoConfirmado( final boolean numeroTelefonoConfirmado) {
+		this.numeroTelefonoConfirmado = numeroTelefonoConfirmado;
 	}
-
-	private final void setNumeroTelefonoMovilConfirmado(final boolean numeroTelefonoMovilConfirmado) {
-		this.numeroTelefonoMovilConfirmado = numeroTelefonoMovilConfirmado;
+	public final String getNumeroTelefonoMovil() {
+		return numeroTelefonoMovil;
 	}
+	public final boolean isNumeroTelefonoConfirmado() {
+		return numeroTelefonoConfirmado;
+	}
+	
+	
 
 }
